@@ -1,0 +1,14 @@
+service: tuum-poc-app
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+  region: eu-west-2
+
+functions:
+  manual_payment_to_salesforce:
+    handler: src.manual_payment_to_salesforce.manual_payment_to_salesforce.manual_payment_to_salesforce
+    layers:
+      - arn:aws:lambda:eu-west-2:364761285891:layer:tuum-poc-layers:2
